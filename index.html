@@ -9,18 +9,24 @@
   <title>TO DO LIST</title>
 </head>
 <body>
+
   <section class="top">
     <h1>My To Do List</h1>
-    <form action="">
-      <input class="input js-addTask-value" id="add" type="text" placeholder="Title...">  
-      <input class="submit js-addTask-trigger" type="submit" value="add">
+
+    <form action="javascript:void(0)">
+      <input id="new-todo" class="input" type="text" placeholder="Title...">  
+      <input id="button" class="submit" type="submit" value="Add">
     </form>    
+
   </section><!-- /.top -->
 
   <section class="bottom">
-    <ul class="todo js-addTask-target"></ul> 
+    <ul id="lists" class="disp_title">
+    </ul><!-- /.disp_title -->
   </section><!-- /.bottom -->
 
+
   <script src="./app.js"></script>
+  <script src="https://kit.fontawesome.com/59f9f0717a.js" crossorigin="anonymous"></script>
 </body>
 </html>
