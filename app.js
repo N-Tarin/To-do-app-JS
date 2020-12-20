@@ -26,16 +26,16 @@ addButton.addEventListener(('click'), () => {
     // //終わったよマーク
     newLi.addEventListener(('click'), () => {
       const li = newLi.closest('li');
-      const checkBtn = document.createElement('button');//チェックボタンつくる
-      const checkIcon = document.createTextNode("✔");//✔つくる
+      // const checkBtn = document.createElement('span');//チェックボタンつくる
+      // const checkIcon = document.createTextNode("✔");//✔つくる
 
-      newLi.prepend(checkBtn);//liタグにチェックボタン追加
-      checkBtn.prepend(checkIcon);//チェックボタンに✔追加
-      checkBtn.className = "check";//クラス名つける
+      // checkBtn.prepend(checkIcon);//チェックボタンに✔追加
+      // li.prepend(checkBtn);//liタグにチェックボタン追加
+      // checkBtn.className = "check";//クラス名つける
       
       li.classList.toggle('finished');
     });
-    
+
     
     // タスク消す
     closeBtn.addEventListener(('click'), () => {
