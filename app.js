@@ -1,12 +1,32 @@
 'use strict';
 
+// reload 
+const reload = document.querySelector('.reload');
+reload.addEventListener(('click'), () => {
+  document.location.reload();
+});
+
+// addMenu
+// const clickPlus = document.querySelector('#js__plusBtn');
+// const addMenu = document.querySelector('.addMenu')
+// addMenu.style.display ='none';
+// clickPlus.addEventListener(('click'), () => {
+//   if(addMenu.style.display=='block') {
+//     addMenu.style.display = 'none';
+//   } else {
+//     addMenu.style.display = 'block';
+//   }
+// });
+
+
+// addList
 const addButton = document.getElementById('button');
 addButton.addEventListener(('click'), () => {
 
-  // 空だったら
+  // if text is empty
   const title = document.getElementById('new-todo');
   if (title.value == '') {
-    alert('何かしよう！');
+    alert('write something！');
   } else {
 
     const lists = document.getElementById('lists');//ulタグ取得
@@ -15,31 +35,27 @@ addButton.addEventListener(('click'), () => {
     
     lists.appendChild(newLi);//ulタグにliタグ追加
     newLi.innerHTML = input.value;//liタグ内容追加
-    
-    const closeBtn = document.createElement('button');//削除ボタンつくる
-    const closeIcon = document.createTextNode("✖");//✖つくる
-    closeBtn.appendChild(closeIcon);//削除に✖追加
-    newLi.appendChild(closeBtn);//liタグに削除追加
-    closeBtn.className = "delete";//クラス名つける
-    
+    newLi.className = "list__item";//クラス名つける
 
-    // //終わったよマーク
+    // チェックマーク
+    const checkBtn = document.createElement('button');//チェックボタンつくる
+    checkBtn.className = 'checkIcon far fa-circle';
+    newLi.prepend(checkBtn);//liタグにチェックボタン追加
+
     newLi.addEventListener(('click'), () => {
       const li = newLi.closest('li');
-      // const checkBtn = document.createElement('span');//チェックボタンつくる
-      // const checkIcon = document.createTextNode("✔");//✔つくる
-
-      // checkBtn.prepend(checkIcon);//チェックボタンに✔追加
-      // li.prepend(checkBtn);//liタグにチェックボタン追加
-      // checkBtn.className = "check";//クラス名つける
-      
+      checkBtn.classList.toggle('checkIcon__active');
       li.classList.toggle('finished');
-    });
+    });    
 
+
+    // 削除ボタン
+    const deleteBtn = document.createElement('button');//削除ボタンつくる
+    deleteBtn.className = 'deleteIcon';
+    newLi.appendChild(deleteBtn);//liタグにチェックボタン追加
     
-    // タスク消す
-    closeBtn.addEventListener(('click'), () => {
-      const deleteLi = closeBtn.closest('li');
+    deleteBtn.addEventListener(('click'), () => {
+      const deleteLi = deleteBtn.closest('li');
       deleteLi.remove();
     });
   }

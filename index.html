@@ -5,29 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <title>TO DO LIST</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>TO DO LIST</title>
 </head>
 <body>
-
-  <section class="top">
-    <h1>My To Do List</h1>
-
-    <form>
-      <input id="new-todo" class="input" type="text" placeholder="Title..."><input id="button" class="submit" type="button" value="Add">
-    </form>    
-
-  </section><!-- /.top -->
-
-  <section class="bottom">
-    <ul id="lists" class="disp_title">
-    </ul><!-- /.disp_title -->
-  </section><!-- /.bottom -->
-
-
+  <header>
+    <p class="reload">
+      <i class="fas fa-redo"></i>
+    </p><!-- /.reload -->  
+    <h1 class="title">
+      <span class="yourname"></span><!-- /.yourname -->My To Do List
+    </h1><!-- /.title -->
+  </header>
+  <section class="main">
+    <!-- <div class="plusBtn">
+      <form>
+        <input id="js__plusBtn" class="plusBtn__input" type="button" value="＋">
+      </form>
+    </div> -->
+    <div class="addMenu">
+      <form class="addMenu__items">
+        <input id="new-todo" class="addMenu__text" type="text" placeholder="Title...">
+        <input id="button" class="addMenu__button" type="button" value="Add">
+      </form><!-- /.addMenu__items --> 
+    </div><!-- /.addMenu -->
+    
+    <section class="listWrapper">
+      <ul id="lists" class="list__items">
+      </ul><!-- /.list__items -->
+    </section><!-- /.listWrapper -->
+    
+  </section><!-- /.main -->
+    
   <script src="./app.js"></script>
   <script src="https://kit.fontawesome.com/59f9f0717a.js" crossorigin="anonymous"></script>
-</body>
-</html>
+  </body>
+  </html>
