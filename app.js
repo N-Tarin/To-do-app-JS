@@ -24,17 +24,17 @@ const addButton = document.getElementById('button');
 addButton.addEventListener(('click'), () => {
 
   // if text is empty
-  const title = document.getElementById('new-todo');
+  const title = document.getElementById('title');
   if (title.value == '') {
     alert('write something！');
   } else {
 
     const lists = document.getElementById('lists');//ulタグ取得
-    const input = document.getElementById('new-todo');//inputタグ取得
+    const title = document.getElementById('title');//inputタグ取得
     const newLi = document.createElement('li');//liタグつくる
     
     lists.appendChild(newLi);//ulタグにliタグ追加
-    newLi.innerHTML = input.value;//liタグ内容追加
+    newLi.innerHTML = title.value;//liタグ内容追加
     newLi.className = "list__item";//クラス名つける
 
     // チェックマーク

@@ -132,7 +132,7 @@ header {
 }
 
 .finished {
-  text-decoration: 1px line-through;
+  text-decoration: 2px line-through;
 }
 
 .deleteIcon {
